@@ -15,7 +15,7 @@ import numpy as np
 def bisection(a , b, fx, tol):
     
     error = abs(b-a) # Estimación del error
-    S = [] # Vector donde recojo todas mis soluciones ’c ’
+    S = [] # Vector donde recojo todas mis soluciones 'c'
     contador = 0 # Contador para el número de iteraciones
     
     while tol < error: # Mientras el error no cumpla con la tolerancia
@@ -40,9 +40,9 @@ def bisection(a , b, fx, tol):
     
     print('Vector de puntos medios : ', S,
         '\nIteraciones : ', contador,
-        '\nc : ' , c,
-        '\nf(c) : ' , fx(c),
-        '\nError : ' , error
+        '\nc : ', c,
+        '\nf(c) : ', fx(c),
+        '\nError : ', error
     )
 
 bisection(1, 2, lambda x: x**2 - 3, 0.0001) # Ejemplo
@@ -64,7 +64,7 @@ import numpy as np
 
 def falseposition(a, b, fx, tol):
 
-    error = abs (b - a )
+    error = abs (b-a)
     S = [] # Vector que recoge mis soluciones
     contador = 0 # Contador de iteraciones
 
@@ -119,7 +119,7 @@ import numpy as np
 def newrap(a0, fx, dfx, tol):
     
     S = [a0] # Vector que recoge las soluciones
-    error = 2* tol # Un error inicial para darle condiciones al ciclo while
+    error = 2*tol # Un error inicial para darle condiciones al ciclo while
     contador = 0 # Para contar el número de iteraciones
     
     while tol < error:
@@ -134,7 +134,7 @@ def newrap(a0, fx, dfx, tol):
     print('Vector de soluciones : ', S,
         '\nIteraciones : ', contador,
         '\nc : ', c,
-        '\nf(c) : ' , fx(c),
+        '\nf(c) : ', fx(c),
         '\nError : ', error
     )
 
@@ -142,26 +142,26 @@ newrap(0, lambda x: 230*x**4 + 18*x**3 + 9*x**2 - 221*x - 9, lambda x : 920*x**3
 
 
 #------------------------------------------#
-#---------- Metodo de la Secante ----------#
+#---------- Método de la Secante ----------#
 #------------------------------------------#
 
-# Librerias necesarias
+# Librerías necesarias
 import numpy as np
 
 # a1, a0 : Valores iniciales
 # ai : Siguiente punto
-# fx : Expresion matematica de mi funcion ( requiere anteponer lambda x: ...)
-# fx ( x0 ) : evalua el polinomio en x0
+# fx : Expresión matemática de mi función (requiere anteponer lambda x: ...)
+# fx(x0) : evalua el polinomio en x0
 # tol : error que tolera
-# error : distancia a la raiz ( error )
+# error : distancia a la raiz (error)
 # c : solucion
-# f ( c ) : funcion evaluada en la solucion encontrada
+# f(c) : funcion evaluada en la solucion encontrada
 
 def secant(a0, a1, fx, tol):
 
-    S = [ a0 , a1 ] # Vector que recoge las soluciones
-    error = 2* tol # Un error inicial para darle condiciones al ciclo while
-    contador = 0 # Para contar el numero de iteraciones
+    S = [a0, a1] # Vector que recoge las soluciones
+    error = 2*tol # Un error inicial para darle condiciones al ciclo while
+    contador = 0 # Para contar el número de iteraciones
 
     while tol < error :
         a0 = S[-2]
@@ -174,7 +174,7 @@ def secant(a0, a1, fx, tol):
     c = S[-1]
 
     print('Vector de soluciones : ', S,
-        '\nIteraciones : ' , contador,
+        '\nIteraciones : ', contador,
         '\nc : ', c,
         '\nf(c) : ', fx(c),
         '\nError : ', error
